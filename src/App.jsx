@@ -1,25 +1,24 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 import Hero from './components/Hero';
-import DiagnosticsShowcase from './components/DiagnosticsShowcase';
+import Diagnostics from './components/Diagnostics';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white font-inter selection:bg-fuchsia-500 selection:text-white">
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-900/10 via-emerald-700/5 to-black" />
-        <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-fuchsia-600/20 blur-3xl" />
-        <div className="absolute top-40 -left-40 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+    <div className="min-h-screen bg-[#05070B] text-slate-200 selection:bg-fuchsia-500/30 selection:text-fuchsia-200">
+      {/* Ambient gradients */}
+      <div className="pointer-events-none fixed inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_10%_0%,rgba(56,189,248,0.15),rgba(0,0,0,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_85%_10%,rgba(168,85,247,0.12),rgba(0,0,0,0))]" />
       </div>
-      <Navbar />
+
+      <NavBar />
       <main>
         <Hero />
-        <DiagnosticsShowcase />
+        <Diagnostics />
       </main>
       <Footer />
     </div>
   );
 }
-
-export default App;
